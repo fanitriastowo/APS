@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.DialogFormInfo">
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <Events>
+    <EventHandler event="windowClosing" listener="java.awt.event.WindowListener" parameters="java.awt.event.WindowEvent" handler="closeDialog"/>
+    <EventHandler event="windowOpened" listener="java.awt.event.WindowListener" parameters="java.awt.event.WindowEvent" handler="formWindowOpened"/>
+  </Events>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jLabel1" pref="257" max="32767" attributes="0"/>
+                          <Component id="jLabel3" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="chkJanuari" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="chkFebruari" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="chkMaret" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="chkApril" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="chkMei" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="chkJuni" alignment="0" min="-2" pref="91" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="chkOktober" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chkSeptember" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chkNovember" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chkDesember" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chkAgustus" min="-2" pref="83" max="-2" attributes="0"/>
+                                  <Component id="chkJuli" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="txtNamaPembayaran" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jLabel2" min="-2" pref="257" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                              <Component id="txtJumlah" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtNamaPembayaran" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="chkJanuari" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="chkJuli" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="chkFebruari" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="chkAgustus" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="chkMaret" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="chkSeptember" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="chkApril" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="chkOktober" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="chkMei" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="chkNovember" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="chkJuni" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="chkDesember" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtJumlah" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tentukan pembayaran bulanan"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="chkJanuari">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Januari"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="chkFebruari">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Februari"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="chkMaret">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Maret"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="chkApril">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="April"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="chkMei">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Mei"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="chkJuni">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Juni"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="chkJuli">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Juli"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="chkAgustus">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Agustus"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="chkSeptember">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="September"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="chkOktober">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Oktober"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="chkNovember">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="November"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="chkDesember">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Desember"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Jumlah pembayaran perbulan"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton1">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/com/yf/kp/images/date_new.gif"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Simpan"/>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[120, 30]"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton2">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/com/yf/kp/images/action_stop.gif"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Batal"/>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[120, 30]"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Nama Pembayaran"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtNamaPembayaran">
+    </Component>
+    <Component class="javax.swing.JFormattedTextField" name="txtJumlah">
+      <Properties>
+        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+          <Format format="#0.00" subtype="-1" type="0"/>
+        </Property>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>
