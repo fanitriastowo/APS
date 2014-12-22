@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        
+        <!-- Database Configuration -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/pembayaran_siswa?zeroDateTimeBehavior=convertToNull</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">root</property>
+
+        <!-- Hibernate Default Scheme -->
+        <property name="hibernate.default_schema">pembayaran_siswa</property>
+
+        <!-- Agar perintah SQL dapat terlihat di dalam console window saat eksekusi -->
+        <property name="hibernate.show_sql">true</property>
+
+        <!-- Digunakan agar hibernate melakukan update table secara otomatis jika struktur atau -->
+        <!-- data berbeda dengan yang ada dalam database -->
+        <!-- Atau membuat table baru jika belum terdapat table tertentu sesuai dengan Model class-->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Simpan session context di dalam thread-->
+        <property name="hibernate.current_session_context_class">thread</property>
+
+        <!-- Batch di set 20 untuk membatasi insert list object kedalam database -->
+        <property name="hibernate.jdbc.batch_size">20</property>
+        
+        <!-- disable second-level cache -->
+        <property name="hibernate.cache.use_second_level_cache">false</property>
+        
+        <property name="hibernate.connection.pool_size">1</property>
+
+        <mapping class="com.yf.kp.model.User"/>
+        <mapping class="com.yf.kp.model.Siswa"/>
+        <mapping class="com.yf.kp.model.Kelas"/>
+        <mapping class="com.yf.kp.model.Angsuran"/>
+        <mapping class="com.yf.kp.model.Bulanan"/>
+        <mapping class="com.yf.kp.model.Tunai"/>
+        <mapping class="com.yf.kp.model.TagihanAngsuran"/>
+        <mapping class="com.yf.kp.model.TagihanBulanan"/>
+        <mapping class="com.yf.kp.model.TagihanTunai"/>
+        <mapping class="com.yf.kp.model.LaporanAngsuran"/>
+        <mapping class="com.yf.kp.model.LaporanTunai"/>
+        <mapping class="com.yf.kp.model.LaporanBulanan"/>
+    </session-factory>
+</hibernate-configuration>
