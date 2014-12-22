@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c9a75543-cab4-47f8-a2fa-be138449a2a1">
+    <property name="ireport.zoom" value="1.0"/>
+    <property name="ireport.x" value="0"/>
+    <property name="ireport.y" value="0"/>
+    <style name="Title" fontName="Arial" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+    <style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+    <style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+    <style name="Detail" fontName="Arial" fontSize="12"/>
+    <style name="Row" mode="Transparent">
+        <conditionalStyle>
+            <conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+            <style backcolor="#E6DAC3"/>
+        </conditionalStyle>
+    </style>
+    <parameter name="namaPembayaran" class="java.lang.String">
+        <defaultValueExpression><![CDATA[]]></defaultValueExpression>
+    </parameter>
+    <queryString>
+		<![CDATA[SELECT
+     laporan_angsuran.`angsuranBayar` AS laporan_angsuran_angsuranBayar,
+     laporan_angsuran.`kaliBayar` AS laporan_angsuran_kaliBayar,
+     laporan_angsuran.`kembalian` AS laporan_angsuran_kembalian,
+     laporan_angsuran.`nama` AS laporan_angsuran_nama,
+     laporan_angsuran.`namaTagihan` AS laporan_angsuran_namaTagihan,
+     laporan_angsuran.`nis` AS laporan_angsuran_nis,
+     laporan_angsuran.`nominal` AS laporan_angsuran_nominal,
+     laporan_angsuran.`totalBayar` AS laporan_angsuran_totalBayar
+FROM
+     `laporan_angsuran` laporan_angsuran
+WHERE
+     laporan_angsuran.`namaTagihan`= $P{namaPembayaran}]]>
+    </queryString>
+    <field name="laporan_angsuran_angsuranBayar" class="java.lang.Double"/>
+    <field name="laporan_angsuran_kaliBayar" class="java.lang.String"/>
+    <field name="laporan_angsuran_kembalian" class="java.lang.Double"/>
+    <field name="laporan_angsuran_nama" class="java.lang.String"/>
+    <field name="laporan_angsuran_namaTagihan" class="java.lang.String"/>
+    <field name="laporan_angsuran_nis" class="java.lang.String"/>
+    <field name="laporan_angsuran_nominal" class="java.lang.Double"/>
+    <field name="laporan_angsuran_totalBayar" class="java.lang.Double"/>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="136" splitType="Stretch">
+            <staticText>
+                <reportElement x="170" y="65" width="460" height="34" uuid="4ebd924f-6d73-4aa4-8768-14463c2ccd6c"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Ubuntu" size="18" isBold="true" isUnderline="true"/>
+                </textElement>
+                <text><![CDATA[LAPORAN PEMBAYARAN SISWA]]></text>
+            </staticText>
+            <staticText>
+                <reportElement style="SubTitle" x="169" y="44" width="462" height="22" forecolor="#050504" uuid="28995cc5-1df9-4ea8-b6c9-e33eb5ed730a"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Ubuntu" size="14" isItalic="true" pdfFontName="Times-Roman"/>
+                </textElement>
+                <text><![CDATA[Jl. Pasar Manis Punggelan Banjarnegara]]></text>
+            </staticText>
+            <staticText>
+                <reportElement style="Title" x="169" y="1" width="462" height="62" uuid="c45e8c59-2887-4eda-bec6-553b321e504b"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Ubuntu" size="32" pdfFontName="Times-Roman"/>
+                </textElement>
+                <text><![CDATA[SMP NEGERI 1 PUNGGELAN]]></text>
+            </staticText>
+            <textField isStretchWithOverflow="true">
+                <reportElement style="Detail" x="233" y="100" width="149" height="26" uuid="577a4400-8cb1-4aef-807e-c282178c19d5"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font fontName="Ubuntu" size="14" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{laporan_angsuran_namaTagihan}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement style="Column header" x="382" y="100" width="44" height="26" forecolor="#000000" uuid="28168b24-04ea-4317-b051-a9ff32c67081"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Ubuntu" size="14" isBold="true"/>
+                </textElement>
+                <text><![CDATA[ = Rp ]]></text>
+            </staticText>
+            <textField isStretchWithOverflow="true">
+                <reportElement style="Detail" x="426" y="100" width="138" height="27" uuid="3ead2c3b-c226-4c96-8b36-dd80ee5190e2"/>
+                <textElement verticalAlignment="Middle">
+                    <font fontName="Ubuntu" size="14" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{laporan_angsuran_nominal}]]></textFieldExpression>
+            </textField>
+        </band>
+    </title>
+    <pageHeader>
+        <band splitType="Stretch"/>
+    </pageHeader>
+    <columnHeader>
+        <band height="16" splitType="Stretch">
+            <line>
+                <reportElement positionType="FixRelativeToBottom" x="90" y="15" width="633" height="1" uuid="5a5b9b4f-e5c8-4bf1-b122-05cb4287db20"/>
+                <graphicElement>
+                    <pen lineWidth="0.5" lineColor="#999999"/>
+                </graphicElement>
+            </line>
+            <staticText>
+                <reportElement style="Column header" x="523" y="0" width="100" height="15" forecolor="#000000" uuid="786d0cf9-b47b-4e6c-9a2b-66c01960ef32"/>
+                <box>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Ubuntu"/>
+                </textElement>
+                <text><![CDATA[Bayar]]></text>
+            </staticText>
+            <staticText>
+                <reportElement style="Column header" x="369" y="0" width="54" height="15" forecolor="#000000" uuid="a7d71d6d-7726-4f91-ae84-b2cf188e2a39"/>
+                <box>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Ubuntu"/>
+                </textElement>
+                <text><![CDATA[Kalibayar]]></text>
+            </staticText>
+            <staticText>
+                <reportElement style="Column header" x="623" y="0" width="100" height="15" forecolor="#000000" uuid="d0db5782-24a6-4186-a4a1-5a86e7a9215a"/>
+                <box>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Ubuntu"/>
+                </textElement>
+                <text><![CDATA[Kembali]]></text>
+            </staticText>
+            <staticText>
+                <reportElement style="Column header" x="145" y="0" width="224" height="15" forecolor="#000000" uuid="6b29943f-7979-4d64-af6a-1b0fb11592a6"/>
+                <box>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Ubuntu"/>
+                </textElement>
+                <text><![CDATA[Nama]]></text>
+            </staticText>
+            <staticText>
+                <reportElement style="Column header" x="90" y="0" width="55" height="15" forecolor="#000000" uuid="9fc848aa-362a-4a04-879b-45db6e2acd5e"/>
+                <box>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Ubuntu"/>
+                </textElement>
+                <text><![CDATA[NIS]]></text>
+            </staticText>
+            <staticText>
+                <reportElement style="Column header" x="423" y="0" width="100" height="15" forecolor="#000000" uuid="2acd647a-50e1-4fa6-8118-1a1c6b807df2"/>
+                <box>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Ubuntu"/>
+                </textElement>
+                <text><![CDATA[Total bayar]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="15" splitType="Stretch">
+            <frame>
+                <reportElement style="Row" mode="Opaque" x="0" y="0" width="802" height="15" uuid="2c33eeab-8196-4c24-8cbb-307ce5554756"/>
+                <textField isStretchWithOverflow="true">
+                    <reportElement style="Detail" x="523" y="0" width="100" height="15" uuid="fe2c3540-8102-4409-9342-f36221a0098c"/>
+                    <box>
+                        <topPen lineWidth="1.0"/>
+                        <leftPen lineWidth="1.0"/>
+                        <bottomPen lineWidth="1.0"/>
+                        <rightPen lineWidth="1.0"/>
+                    </box>
+                    <textElement textAlignment="Center" verticalAlignment="Middle">
+                        <font fontName="Ubuntu" size="11"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[$F{laporan_angsuran_angsuranBayar}]]></textFieldExpression>
+                </textField>
+                <textField isStretchWithOverflow="true">
+                    <reportElement style="Detail" x="369" y="0" width="54" height="15" uuid="463db2b4-e54d-445c-8f3d-87a45ab23833"/>
+                    <box>
+                        <topPen lineWidth="1.0"/>
+                        <leftPen lineWidth="1.0"/>
+                        <bottomPen lineWidth="1.0"/>
+                        <rightPen lineWidth="1.0"/>
+                    </box>
+                    <textElement textAlignment="Center" verticalAlignment="Middle">
+                        <font fontName="Ubuntu" size="11"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[$F{laporan_angsuran_kaliBayar}]]></textFieldExpression>
+                </textField>
+                <textField isStretchWithOverflow="true">
+                    <reportElement style="Detail" x="623" y="0" width="100" height="15" uuid="3afea6f1-1275-4d60-8782-c1ee8753a3e2"/>
+                    <box>
+                        <topPen lineWidth="1.0"/>
+                        <leftPen lineWidth="1.0"/>
+                        <bottomPen lineWidth="1.0"/>
+                        <rightPen lineWidth="1.0"/>
+                    </box>
+                    <textElement textAlignment="Center" verticalAlignment="Middle">
+                        <font fontName="Ubuntu" size="11"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[$F{laporan_angsuran_kembalian}]]></textFieldExpression>
+                </textField>
+                <textField isStretchWithOverflow="true">
+                    <reportElement style="Detail" x="145" y="0" width="224" height="15" uuid="c5e14e12-be17-4e58-aee3-0b27dd8eda74"/>
+                    <box>
+                        <topPen lineWidth="1.0"/>
+                        <leftPen lineWidth="1.0"/>
+                        <bottomPen lineWidth="1.0"/>
+                        <rightPen lineWidth="1.0"/>
+                    </box>
+                    <textElement textAlignment="Center" verticalAlignment="Middle">
+                        <font fontName="Ubuntu" size="11"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[$F{laporan_angsuran_nama}]]></textFieldExpression>
+                </textField>
+                <textField isStretchWithOverflow="true">
+                    <reportElement style="Detail" x="90" y="0" width="55" height="15" uuid="79f3a340-49d9-4c70-b9c2-9c23cfce61ab"/>
+                    <box>
+                        <topPen lineWidth="1.0"/>
+                        <leftPen lineWidth="1.0"/>
+                        <bottomPen lineWidth="1.0"/>
+                        <rightPen lineWidth="1.0"/>
+                    </box>
+                    <textElement textAlignment="Center" verticalAlignment="Middle">
+                        <font fontName="Ubuntu" size="11"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[$F{laporan_angsuran_nis}]]></textFieldExpression>
+                </textField>
+                <textField isStretchWithOverflow="true">
+                    <reportElement style="Detail" x="423" y="0" width="100" height="15" uuid="099ef0d4-c128-49d3-a43a-67b172e506b0"/>
+                    <box>
+                        <topPen lineWidth="1.0"/>
+                        <leftPen lineWidth="1.0"/>
+                        <bottomPen lineWidth="1.0"/>
+                        <rightPen lineWidth="1.0"/>
+                    </box>
+                    <textElement textAlignment="Center" verticalAlignment="Middle">
+                        <font fontName="Ubuntu" size="11"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[$F{laporan_angsuran_totalBayar}]]></textFieldExpression>
+                </textField>
+            </frame>
+        </band>
+    </detail>
+    <columnFooter>
+        <band height="6" splitType="Stretch">
+            <line>
+                <reportElement positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1" uuid="eb9e6027-0970-41fb-bdc0-90a3f79e607b"/>
+                <graphicElement>
+                    <pen lineWidth="0.5" lineColor="#999999"/>
+                </graphicElement>
+            </line>
+        </band>
+    </columnFooter>
+    <pageFooter>
+        <band height="25" splitType="Stretch">
+            <frame>
+                <reportElement mode="Opaque" x="-21" y="1" width="843" height="24" forecolor="#D0B48E" backcolor="#F2EBDF" uuid="29fc1693-d95f-4a86-8433-70a6e794ea7a"/>
+                <textField evaluationTime="Report">
+                    <reportElement style="Column header" x="783" y="1" width="40" height="20" forecolor="#736343" uuid="f2a0d6d5-ed9b-4d76-b215-a9e50aec60b6"/>
+                    <textElement verticalAlignment="Middle">
+                        <font fontName="Ubuntu" size="10" isBold="false"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+                </textField>
+                <textField>
+                    <reportElement style="Column header" x="703" y="1" width="80" height="20" forecolor="#736343" uuid="0a6e8755-b886-4979-82f9-706c1dcd016a"/>
+                    <textElement textAlignment="Right" verticalAlignment="Middle">
+                        <font fontName="Ubuntu" size="10" isBold="false"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+                </textField>
+                <textField pattern="EEEEE dd MMMMM yyyy">
+                    <reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343" uuid="dfaf183c-a048-427a-8333-08412c034bfa"/>
+                    <textElement verticalAlignment="Middle">
+                        <font fontName="Ubuntu" size="10" isBold="false"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+                </textField>
+            </frame>
+        </band>
+    </pageFooter>
+    <summary>
+        <band splitType="Stretch"/>
+    </summary>
+</jasperReport>

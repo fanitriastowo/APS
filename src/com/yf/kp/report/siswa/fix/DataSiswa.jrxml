@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0b50df67-975f-44d5-951d-b99f06541e29">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Apple Garamond" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Apple Garamond" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Apple Garamond" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="kelas" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     master_siswa.`agama` AS master_siswa_agama,
+     master_siswa.`agama_ortu` AS master_siswa_agama_ortu,
+     master_siswa.`alamat` AS master_siswa_alamat,
+     master_siswa.`alamat_ortu` AS master_siswa_alamat_ortu,
+     master_siswa.`jenis_kelamin` AS master_siswa_jenis_kelamin,
+     master_siswa.`kelas` AS master_siswa_kelas,
+     master_siswa.`nama` AS master_siswa_nama,
+     master_siswa.`nama_ortu` AS master_siswa_nama_ortu,
+     master_siswa.`nis` AS master_siswa_nis,
+     master_siswa.`pekerjaan` AS master_siswa_pekerjaan,
+     master_siswa.`telp` AS master_siswa_telp,
+     master_siswa.`tempat_lahir` AS master_siswa_tempat_lahir,
+     master_siswa.`tgl_lahir` AS master_siswa_tgl_lahir
+FROM
+     `master_siswa` master_siswa
+WHERE master_siswa.`kelas` =$P{kelas}]]>
+	</queryString>
+	<field name="master_siswa_agama" class="java.lang.String"/>
+	<field name="master_siswa_agama_ortu" class="java.lang.String"/>
+	<field name="master_siswa_alamat" class="java.lang.String"/>
+	<field name="master_siswa_alamat_ortu" class="java.lang.String"/>
+	<field name="master_siswa_jenis_kelamin" class="java.lang.String"/>
+	<field name="master_siswa_kelas" class="java.lang.String"/>
+	<field name="master_siswa_nama" class="java.lang.String"/>
+	<field name="master_siswa_nama_ortu" class="java.lang.String"/>
+	<field name="master_siswa_nis" class="java.lang.String"/>
+	<field name="master_siswa_pekerjaan" class="java.lang.String"/>
+	<field name="master_siswa_telp" class="java.lang.String"/>
+	<field name="master_siswa_tempat_lahir" class="java.lang.String"/>
+	<field name="master_siswa_tgl_lahir" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="136" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="174" y="0" width="462" height="62" uuid="9fb46801-7032-44e5-ac0e-1bb28f1ab37f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Apple Garamond" size="32" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[SMP NEGERI 1 PUNGGELAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="174" y="41" width="462" height="22" forecolor="#050504" uuid="1a34d3b1-27a3-4fa1-b6c3-9d13d81a44df"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Apple Garamond" size="14" isItalic="true" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Jl. Pasar Manis Punggelan Banjarnegara]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="176" y="66" width="460" height="34" uuid="3aa0e6f3-f908-4b7e-ba4b-46d547eef272"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Apple Garamond" size="18" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN DATA SISWA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="1" y="103" width="61" height="23" forecolor="#000000" uuid="5fef8285-dfa6-4fd7-a2b1-9cd66ca0e393"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Apple Garamond" size="14"/>
+				</textElement>
+				<text><![CDATA[Kelas = ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="63" y="103" width="77" height="23" uuid="d1d1dec7-520b-46f7-846e-9045dd968b0e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Apple Garamond" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{master_siswa_kelas}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="802" height="1" uuid="864bc985-4ae8-4906-94d0-e38cb017750c"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="122" y="0" width="40" height="15" forecolor="#000000" uuid="f9e95d08-a92d-492b-a8db-a22759eecd7d"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Apple Garamond" size="11"/>
+				</textElement>
+				<text><![CDATA[Agama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="162" y="0" width="118" height="15" forecolor="#000000" uuid="460c5f5d-6f98-45ad-9e85-3d26147b39d1"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Apple Garamond" size="11"/>
+				</textElement>
+				<text><![CDATA[Alamat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="561" y="0" width="121" height="15" forecolor="#000000" uuid="34a94ffd-40fd-432b-a34e-cd1377c4026e"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Apple Garamond" size="11"/>
+				</textElement>
+				<text><![CDATA[Alamat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="280" y="0" width="30" height="15" forecolor="#000000" uuid="7349c983-13aa-411c-baa4-970bfd10b5e1"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Apple Garamond" size="11"/>
+				</textElement>
+				<text><![CDATA[L/P]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="25" y="0" width="97" height="15" forecolor="#000000" uuid="3a14ae5e-324d-4052-adce-07568a283846"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Apple Garamond" size="11"/>
+				</textElement>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="475" y="0" width="86" height="15" forecolor="#000000" uuid="c37c53a0-ce41-42e4-8b58-0bd4cf774dda"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Apple Garamond" size="11"/>
+				</textElement>
+				<text><![CDATA[Nama Orangtua]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="25" height="15" forecolor="#000000" uuid="889134ab-2b14-4353-8eb3-7ae5bfa0fdd0"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Apple Garamond" size="11"/>
+				</textElement>
+				<text><![CDATA[NIS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="682" y="0" width="58" height="15" forecolor="#000000" uuid="5da7b8b1-daf9-4cb2-86cd-38e1ce06cd50"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Apple Garamond" size="11"/>
+				</textElement>
+				<text><![CDATA[Pekerjaan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="740" y="0" width="61" height="15" forecolor="#000000" uuid="0f66b263-69b9-411d-a353-21293b2caa6e"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Apple Garamond" size="11"/>
+				</textElement>
+				<text><![CDATA[Telp]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="310" y="0" width="74" height="15" forecolor="#000000" uuid="51f617e4-38d2-4df4-8fa8-b19271f81fa5"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Apple Garamond" size="11"/>
+				</textElement>
+				<text><![CDATA[Tempat lahir]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="384" y="0" width="91" height="15" forecolor="#000000" uuid="01cd5499-64f7-4a46-8156-78398da0c0c7"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Apple Garamond" size="11"/>
+				</textElement>
+				<text><![CDATA[Tanggal lahir]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="802" height="15" uuid="92c2ab76-bf8e-445b-9b1a-3ce42dad5104"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="122" y="0" width="40" height="15" uuid="1e3f84e7-7155-4a7e-9f87-df1cc1fadf4a"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Apple Garamond" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{master_siswa_agama}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="162" y="0" width="118" height="15" uuid="be0ee925-ea92-4798-8654-de1b4a576590"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Apple Garamond" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{master_siswa_alamat}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="561" y="0" width="121" height="15" uuid="800a4a37-ddda-4b2a-8d6d-b6fc442892b1"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Apple Garamond" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{master_siswa_alamat_ortu}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="280" y="0" width="30" height="15" uuid="948087b4-8a7e-44b4-af31-e78f3c1d89ca"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Apple Garamond" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{master_siswa_jenis_kelamin}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="25" y="0" width="97" height="15" uuid="dc8646ff-c94a-4ece-a562-be1dd18aa109"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Apple Garamond" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{master_siswa_nama}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="475" y="0" width="86" height="15" uuid="b1bcb97e-c9cd-46ba-8685-fd570dac13f5"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Apple Garamond" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{master_siswa_nama_ortu}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="0" y="0" width="25" height="15" uuid="88c53282-4276-4774-a2d0-e2ae2c978b70"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Apple Garamond" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{master_siswa_nis}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="682" y="0" width="58" height="15" uuid="c6d5553f-b75b-4df7-8a9f-5117f363faf3"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Apple Garamond" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{master_siswa_pekerjaan}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="740" y="0" width="61" height="15" uuid="dc5ccbf9-85b3-439b-9d51-83c25025da63"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Apple Garamond" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{master_siswa_telp}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="310" y="0" width="74" height="15" uuid="a4df0793-347a-4401-81c9-c742dbb7be2e"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Apple Garamond" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{master_siswa_tempat_lahir}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="384" y="0" width="91" height="15" uuid="501588b2-1faa-4b34-85e9-6e5c59c1a144"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Apple Garamond" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{master_siswa_tgl_lahir}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="6" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1" uuid="778db0a4-1cb2-4792-8ce6-54ba4d69f9d7"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="1" width="843" height="24" forecolor="#D0B48E" backcolor="#F2EBDF" uuid="828dc54e-f824-492c-a313-7b89bb2bb997"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="783" y="1" width="40" height="20" forecolor="#736343" uuid="da303211-3519-4cbd-84e5-971f8c04b786"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Apple Garamond" size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="703" y="1" width="80" height="20" forecolor="#736343" uuid="7ec05367-287e-4ea5-bfbd-73ba11c82519"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Apple Garamond" size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343" uuid="feacb70e-c16f-4c33-9c7a-5062ca0e47b2"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Apple Garamond" size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="73f8559b-8af2-463e-ba9d-e42ea6391f51">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="kelas" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="namaTagihan" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     tagihan_bulanan.`agustus` AS tagihan_bulanan_agustus,
+     tagihan_bulanan.`april` AS tagihan_bulanan_april,
+     tagihan_bulanan.`desember` AS tagihan_bulanan_desember,
+     tagihan_bulanan.`februari` AS tagihan_bulanan_februari,
+     tagihan_bulanan.`januari` AS tagihan_bulanan_januari,
+     tagihan_bulanan.`juli` AS tagihan_bulanan_juli,
+     tagihan_bulanan.`jumlah` AS tagihan_bulanan_jumlah,
+     tagihan_bulanan.`juni` AS tagihan_bulanan_juni,
+     tagihan_bulanan.`kategori` AS tagihan_bulanan_kategori,
+     tagihan_bulanan.`kelas` AS tagihan_bulanan_kelas,
+     tagihan_bulanan.`maret` AS tagihan_bulanan_maret,
+     tagihan_bulanan.`mei` AS tagihan_bulanan_mei,
+     tagihan_bulanan.`nama` AS tagihan_bulanan_nama,
+     tagihan_bulanan.`namaTagihan` AS tagihan_bulanan_namaTagihan,
+     tagihan_bulanan.`nis` AS tagihan_bulanan_nis,
+     tagihan_bulanan.`november` AS tagihan_bulanan_november,
+     tagihan_bulanan.`oktober` AS tagihan_bulanan_oktober,
+     tagihan_bulanan.`september` AS tagihan_bulanan_september
+FROM
+     `tagihan_bulanan` tagihan_bulanan
+WHERE tagihan_bulanan.`kelas` = $P{kelas} AND tagihan_bulanan.`namaTagihan` = $P{namaTagihan}]]>
+	</queryString>
+	<field name="tagihan_bulanan_agustus" class="java.lang.Boolean"/>
+	<field name="tagihan_bulanan_april" class="java.lang.Boolean"/>
+	<field name="tagihan_bulanan_desember" class="java.lang.Boolean"/>
+	<field name="tagihan_bulanan_februari" class="java.lang.Boolean"/>
+	<field name="tagihan_bulanan_januari" class="java.lang.Boolean"/>
+	<field name="tagihan_bulanan_juli" class="java.lang.Boolean"/>
+	<field name="tagihan_bulanan_jumlah" class="java.lang.Double"/>
+	<field name="tagihan_bulanan_juni" class="java.lang.Boolean"/>
+	<field name="tagihan_bulanan_kategori" class="java.lang.String"/>
+	<field name="tagihan_bulanan_kelas" class="java.lang.String"/>
+	<field name="tagihan_bulanan_maret" class="java.lang.Boolean"/>
+	<field name="tagihan_bulanan_mei" class="java.lang.Boolean"/>
+	<field name="tagihan_bulanan_nama" class="java.lang.String"/>
+	<field name="tagihan_bulanan_namaTagihan" class="java.lang.String"/>
+	<field name="tagihan_bulanan_nis" class="java.lang.String"/>
+	<field name="tagihan_bulanan_november" class="java.lang.Boolean"/>
+	<field name="tagihan_bulanan_oktober" class="java.lang.Boolean"/>
+	<field name="tagihan_bulanan_september" class="java.lang.Boolean"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="136" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="176" y="3" width="462" height="62" uuid="7162eb8b-ed57-406b-813e-c0e3ba7663f7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Apple Garamond" size="32" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[SMP NEGERI 1 PUNGGELAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="178" y="68" width="460" height="34" uuid="df37d277-b0e8-4e14-a2a5-349a46da0c05"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Apple Garamond" size="18" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN TAGIHAN SISWA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="176" y="43" width="462" height="22" forecolor="#050504" uuid="c5cfb91a-2fb4-4c5b-98a0-772510e1878d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Apple Garamond" size="14" isItalic="true" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Jl. Pasar Manis Punggelan Banjarnegara]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="2" y="110" width="44" height="15" forecolor="#000000" uuid="74e93c36-f25b-4f19-9c4d-5fc30053a71c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Apple Garamond"/>
+				</textElement>
+				<text><![CDATA[Kelas =]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="44" y="110" width="44" height="15" uuid="410c0025-7de4-4726-8e47-bc8ec3359a74"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Apple Garamond"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tagihan_bulanan_kelas}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="132" y="110" width="66" height="15" forecolor="#000000" uuid="93ef099c-9b0c-4476-b913-f961d7e9243b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Apple Garamond"/>
+				</textElement>
+				<text><![CDATA[Kategori =]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="198" y="110" width="88" height="15" uuid="dcf3f230-cce5-41aa-8a8a-424d7cc02852"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Apple Garamond"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tagihan_bulanan_kategori}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="802" height="1" uuid="1a1b3d48-67b7-4d3b-b370-7c7a5ec83587"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="541" y="0" width="44" height="15" forecolor="#000000" uuid="c877861f-f3d6-4a60-9bad-b35225353e30"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Apple Garamond" size="10"/>
+				</textElement>
+				<text><![CDATA[Agustus]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="382" y="0" width="44" height="15" forecolor="#000000" uuid="81140b6b-504c-482b-9034-05445a6d04f5"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Apple Garamond" size="10"/>
+				</textElement>
+				<text><![CDATA[April]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="754" y="0" width="44" height="15" forecolor="#000000" uuid="249a7274-c17c-4634-96e2-2901050f5940"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Apple Garamond" size="10"/>
+				</textElement>
+				<text><![CDATA[Desember]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="295" y="0" width="44" height="15" forecolor="#000000" uuid="6f4558be-ad2c-483a-90a4-8dbd3bbea111"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Apple Garamond" size="10"/>
+				</textElement>
+				<text><![CDATA[Februari]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="252" y="0" width="44" height="15" forecolor="#000000" uuid="7858243a-3da1-4c95-8694-e29c94e874c3"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Apple Garamond" size="10"/>
+				</textElement>
+				<text><![CDATA[Januari]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="498" y="0" width="44" height="15" forecolor="#000000" uuid="d01871f9-3839-4d87-a69e-a0f92a55d525"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Apple Garamond" size="10"/>
+				</textElement>
+				<text><![CDATA[Juli]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="175" y="0" width="78" height="15" forecolor="#000000" uuid="342d812a-d96a-4bf2-a22c-3b75b0dc36fc"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Apple Garamond" size="10"/>
+				</textElement>
+				<text><![CDATA[Jumlah]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="454" y="0" width="44" height="15" forecolor="#000000" uuid="0d32d58a-7128-42a2-bb6b-d891f2a892af"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Apple Garamond" size="10"/>
+				</textElement>
+				<text><![CDATA[Juni]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="338" y="0" width="44" height="15" forecolor="#000000" uuid="7ed66166-83ed-4555-bc02-fd6400f85e10"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Apple Garamond" size="10"/>
+				</textElement>
+				<text><![CDATA[Maret]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="426" y="0" width="29" height="15" forecolor="#000000" uuid="da28fbb0-5b9a-403a-a41c-220bcc8a42a1"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Apple Garamond" size="10"/>
+				</textElement>
+				<text><![CDATA[Mei]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="32" y="0" width="79" height="15" forecolor="#000000" uuid="51628ce7-4e10-45d0-8506-680ac45ad371"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Apple Garamond" size="10"/>
+				</textElement>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="111" y="0" width="65" height="15" forecolor="#000000" uuid="f69a299b-8747-4e62-b51f-4a526018a924"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Apple Garamond" size="10"/>
+				</textElement>
+				<text><![CDATA[Nama tagihan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="1" y="0" width="31" height="15" forecolor="#000000" uuid="b5d18980-5321-4b9a-8225-42423f4a4b66"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Apple Garamond" size="10"/>
+				</textElement>
+				<text><![CDATA[NIS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="695" y="0" width="59" height="15" forecolor="#000000" uuid="6dea316e-4dd5-43e9-a66d-01c7190ef486"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Apple Garamond" size="10"/>
+				</textElement>
+				<text><![CDATA[November]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="652" y="0" width="44" height="15" forecolor="#000000" uuid="53bd1e50-3080-4b44-ba39-0b968ba1bf99"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Apple Garamond" size="10"/>
+				</textElement>
+				<text><![CDATA[Oktober]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="585" y="0" width="68" height="15" forecolor="#000000" uuid="7b21adbc-a772-4392-bc6d-00edc1999bba"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Apple Garamond" size="10"/>
+				</textElement>
+				<text><![CDATA[September]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="802" height="15" uuid="a359c405-2b4c-49e3-abce-c1c865d15e12"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="541" y="0" width="44" height="15" uuid="17501c89-1b77-44cd-967f-801dbdbe048f"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Apple Garamond" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tagihan_bulanan_agustus}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="382" y="0" width="44" height="15" uuid="379e2d8a-cee7-42d8-8fa1-4f9fd3687ea1"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Apple Garamond" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tagihan_bulanan_april}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="754" y="0" width="44" height="15" uuid="5fe58315-ba50-4594-a696-3ba61633d4fc"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Apple Garamond" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tagihan_bulanan_desember}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="295" y="0" width="44" height="15" uuid="d23e494c-a651-4be4-9ff9-232273aedbab"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Apple Garamond" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tagihan_bulanan_februari}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="252" y="0" width="44" height="15" uuid="56309612-9446-4c68-8f5c-2753e741756c"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Apple Garamond" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tagihan_bulanan_januari}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="498" y="0" width="44" height="15" uuid="52bbb1d3-c05f-453f-805b-48d83f003e1f"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Apple Garamond" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tagihan_bulanan_juli}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="175" y="0" width="78" height="15" uuid="1c823e24-d078-423e-bcc7-c569b1b2f7df"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Apple Garamond" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tagihan_bulanan_jumlah}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="454" y="0" width="44" height="15" uuid="46b51618-caba-4446-b24e-f78fff55bdb9"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Apple Garamond" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tagihan_bulanan_juni}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="338" y="0" width="44" height="15" uuid="254a0277-daab-48ee-9b49-be2fce2d478a"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Apple Garamond" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tagihan_bulanan_maret}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="426" y="0" width="29" height="15" uuid="1e4fcc8b-ece4-4b9b-9e72-07493e2eba1f"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Apple Garamond" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tagihan_bulanan_mei}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="32" y="0" width="79" height="15" uuid="5d291fc5-6640-45b5-9b6b-cf249390d0c2"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Apple Garamond" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tagihan_bulanan_nama}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="111" y="0" width="65" height="15" uuid="6b621e3a-dcd3-48c1-819c-d12dac5aa6b8"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Apple Garamond" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tagihan_bulanan_namaTagihan}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="1" y="0" width="31" height="15" uuid="c5949893-c0a1-402d-9b3b-7d9f61a064c9"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Apple Garamond" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tagihan_bulanan_nis}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="695" y="0" width="59" height="15" uuid="8ee76d31-ff89-483b-83a7-16146a9dc470"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Apple Garamond" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tagihan_bulanan_november}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="652" y="0" width="44" height="15" uuid="7b651ff1-9cf3-4c00-b01b-29294b2ab6ac"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Apple Garamond" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tagihan_bulanan_oktober}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="585" y="0" width="68" height="15" uuid="409e4b3e-4fe6-44a3-b441-7fe05f190314"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Apple Garamond" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tagihan_bulanan_september}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="6" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1" uuid="41d11d3e-970c-4a84-a14b-c03a1e2185f3"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="1" width="843" height="24" forecolor="#D0B48E" backcolor="#F2EBDF" uuid="b429e712-8d30-4d60-b09d-4955ee0db724"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="783" y="1" width="40" height="20" forecolor="#736343" uuid="51c0c598-b404-446c-b073-8adf719799fb"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Apple Garamond" size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="703" y="1" width="80" height="20" forecolor="#736343" uuid="78140792-5921-4d85-886a-0c01e139f090"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Apple Garamond" size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343" uuid="c3d4873e-d65c-4f95-9234-2f0787a3a83c"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Apple Garamond" size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
